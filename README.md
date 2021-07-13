@@ -8,6 +8,5 @@ Tinkercad is the website that used to create this circuit
 
 I used another arduino instead of bluetooth
 
-tinkercad link https://www.tinkercad.com/things/27w3kWW9gTV-ultrasonic-distance-sensor/editel?sharecode=xndF0LvJAxifXOcoORGXwRInsUsNuENlNgwKxTw3xf8
 
 
