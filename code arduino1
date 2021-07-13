@@ -37,12 +37,37 @@ servo6.attach(13);
   
 }
 
-void loop()
-
-{
+void loop(){
+  
+ while(getDistance() > 25){  }   
+  
+ int startTime = millis();  
+  
+   while(getDistance() < 25){  
+  
+   int currntTime = millis();  
+  
+  if (currntTime - startTime > 3000)
+  {
   
 
-long duration, distance;
+Serial.println("hello");
+
+servo1.write(90);
+servo2.write(90);
+servo3.write(90);
+servo4.write(90);
+servo5.write(90);
+servo6.write(90);
+      break; }                                          // get out so only send message once
+  }
+
+
+}
+
+
+int getDistance (){                                    // defining the function to calculate the distance
+   
 
 digitalWrite(trigPin, LOW);
 
@@ -57,54 +82,5 @@ digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 
 distance = (duration/2) / 29.1;
- 
-if (distance < 10)
-
-{
-
-Serial.println("the distance is less than 10");
-
-servo1.write(90);
-servo2.write(90);
-servo3.write(90);
-servo4.write(90);
-servo5.write(90);
-servo6.write(90);
-
-
-
 }
 
- else if(distance <60)
-   delay(1000);
-   
-   
-servo1.write(180);
-servo2.write(180);
-servo3.write(180);
-servo4.write(180);
-servo5.write(180);
-servo6.write(180);
-
-{
-
-
-
-
-Serial.println("The distance is more than 60");
-
-}
-
-
-
-  {
-
-Serial.print(distance);
-
-Serial.println(" cm");
-
-}
-
-delay(500);
-
-}
